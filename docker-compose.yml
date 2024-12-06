@@ -14,6 +14,10 @@ services:
       - BASE_URL=${BASE_URL:-http://localhost:3000}
       - DATABASE_URL=${DATABASE_URL:-postgresql://postgres@postgres/planka}
       - SECRET_KEY=${SECRET_KEY:-notsecretkey}
+      - DEFAULT_ADMIN_EMAIL=${ADMIN_EMAIL} # Do not remove if you want to prevent this user from being edited/deleted
+      - DEFAULT_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - DEFAULT_ADMIN_NAME=${ADMIN_NAME}
+      - DEFAULT_ADMIN_USERNAME=${ADMIN_USERNAME}
 
       # - TRUST_PROXY=0
       # - TOKEN_EXPIRES_IN=365 # In days
@@ -25,11 +29,6 @@ services:
 
       # Configure knex to accept SSL certificates
       # - KNEX_REJECT_UNAUTHORIZED_SSL_CERTIFICATE=false
-
-       - DEFAULT_ADMIN_EMAIL=${ADMIN_EMAIL} # Do not remove if you want to prevent this user from being edited/deleted
-       - DEFAULT_ADMIN_PASSWORD=${ADMIN_PASSWORD}
-       - DEFAULT_ADMIN_NAME=${ADMIN_NAME}
-       - DEFAULT_ADMIN_USERNAME=${ADMIN_USERNAME}
 
       # - SHOW_DETAILED_AUTH_ERRORS=false # Set to true to show more detailed authentication error messages. It should not be enabled without a rate limiter for security reasons.
       # - ALLOW_ALL_TO_CREATE_PROJECTS=true
